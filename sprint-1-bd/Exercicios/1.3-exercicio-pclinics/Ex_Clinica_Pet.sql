@@ -35,6 +35,23 @@ CREATE TABLE Consulta(
 	nomeVeterinario VARCHAR(30),
 	pet VARCHAR(30),
 );
+GO
+
+
+CREATE TABLE Raca(
+	idRaca TINYINT PRIMARY KEY IDENTITY(1,1),
+	idPet TINYINT FOREIGN KEY REFERENCES Pet (idPet),
+	nomeRaca VARCHAR(20),
+	nomePet VARCHAR(30),
+);
+GO
+
+CREATE TABLE TipoPet(
+	idTipo TINYINT PRIMARY KEY IDENTITY(1,1),
+	idRaca TINYINT FOREIGN KEY REFERENCES raca (idRaca),
+	tipoPet VARCHAR(20),
+);
+
 
 
 
